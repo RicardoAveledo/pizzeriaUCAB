@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-4 offset-lg-4">
                    <br>
-    ORDEN ACTUAL
+    ORDEN ACTUAL {{localtime}}
     <br>
     <div class ="container-fluid">
             {% for pedido in listaorden %}
@@ -39,7 +39,7 @@
                         <a href="http://localhost:8000/cliente/?acum={{ acum }}&order={{ order }}&count={{ count }}&inicio=1" type="button" class="btn btn-info btn-lg btn-block">Comprar otra pizza
                         </br>
                         </a>
-                        <a href="http://localhost:8000/homepage/" type="button" class="btn btn-danger btn-lg btn-block">Cancelar
+                        <a href="http://localhost:8000/homepage/?acum={{ acum }}&order={{ order }}&localtime={{ localtime }}&inicio=2" type="button" class="btn btn-danger btn-lg btn-block">Cancelar
                         </br>
                         </a>
                     </div>
