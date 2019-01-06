@@ -4,4 +4,4 @@ from django.http import HttpResponse
 # Create your views here.
 
 def index(request):
-	return HttpResponse("Este es el sitio de Administración.")
+	return render(request, 'administracion.html', {})
