@@ -4,24 +4,15 @@
     <meta charset="UTF-8">
     <title>Pizzería UCAB</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-<style>
-.fila {
-  display: flex;
-}
-
-.columna {
-  flex: 50%;
-}
-</style>
 </head>
 <body>
-
-<div class="fila">
-  <div class="columna">
     <a href="http://localhost:8000/homepage/" type="button" class="btn btn-danger btn-sm btn-inline">
     Menú Principal
     </a>
-    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4">
+                   <br>
     ORDEN ACTUAL
     <br>
     <div class ="container-fluid">
@@ -37,24 +28,24 @@
     <br>
     Precio total a pagar: {{acum}}
   </div>
-  <div class="columna">
-      <div class="container">     
-        <div class="row">
-            {% for tamano in tamanos %}
+            </div>            
             <div class="col-lg-4 offset-lg-4">
                 <div class="media">
                     <div class="media-body">
-                        <a href="http://localhost:8000/cliente/?precio={{ tamano.precio }}&acum={{ acum }}&agregar={{ tamano.size }}&order={{ order }}&count={{ count }}&inicio=2" type="button" class="btn {{ tamano.color }} btn-lg btn-block">{{ tamano.size }}
-                            </br>{{ tamano.precio }}
+                        <a href="http://localhost:8000/homepage/?acum={{ acum }}&order={{ order }}&count={{ count }}&inicio=2" type="button" class="btn btn-success btn-lg btn-block">
+                        Pagar {{ acum }} BsS
+                        </br>
+                        </a>
+                        <a href="http://localhost:8000/cliente/?acum={{ acum }}&order={{ order }}&count={{ count }}&inicio=1" type="button" class="btn btn-info btn-lg btn-block">Comprar otra pizza
+                        </br>
+                        </a>
+                        <a href="http://localhost:8000/homepage/" type="button" class="btn btn-danger btn-lg btn-block">Cancelar
+                        </br>
                         </a>
                     </div>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
-  </div>
-</div>
-   
 </body>
 </html>
