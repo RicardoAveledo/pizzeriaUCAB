@@ -18,8 +18,9 @@
 <div class="fila">
   <div class="columna">
     <a href="http://localhost:8000/homepage/" type="button" class="btn btn-danger btn-sm btn-inline">
-    Menú Principal
+    Menú Principal 
     </a>
+    {{localtime}}
     <br>
     ORDEN ACTUAL
     <br>
@@ -43,7 +44,7 @@
             <div class="col-lg-4 offset-lg-4">
                 <div class="media">
                     <div class="media-body">
-                        <a href="http://localhost:8000/cliente/?precio={{ ingrediente.precio }}&acum={{ acum }}&agregar={{ ingrediente.name }}&order={{ order }}&count={{ count }}&inicio=2" type="button" class="btn {{ ingrediente.color }} btn-lg btn-block">{{ ingrediente.name }}
+                        <a href="http://localhost:8000/cliente/?precio={{ ingrediente.precio }}&acum={{ acum }}&acumaux={{ acumaux }}&agregar={{ ingrediente.name }}&order={{ order }}&count={{ count }}&inicio=2" type="button" class="btn {{ ingrediente.color }} btn-lg btn-block">{{ ingrediente.name }}
                             </br>{{ ingrediente.precio }}
                         </a>
                     </div>
@@ -52,10 +53,10 @@
             {% endfor %}
 
             <div class="col-lg-4 offset-lg-4">
-                <a href="http://localhost:8000/cliente/?acum={{ acum }}&order={{ order }}&count={{ count }}&inicio=1" type="button" class="btn btn-info btn-lg btn-block">Comprar otra pizza
+                <a href="http://localhost:8000/cliente/?acum={{ acum }}&acumaux={{ acumaux }}&order={{ order }}&count={{ count }}&inicio=1" type="button" class="btn btn-info btn-lg btn-block">Comprar otra pizza
                 </br>
                 </a>
-                <a href="http://localhost:8000/cliente/?acum={{ acum }}&order={{ order }}&count={{ count }}&inicio=3" type="button" class="btn btn-Success btn-lg btn-block">Proceder al pago
+                <a href="http://localhost:8000/cliente/?acum={{ acum }}&acumaux={{ acumaux }}&order={{ order }}&count={{ count }}&inicio=3" type="button" class="btn btn-Success btn-lg btn-block">Proceder al pago
                 </br>
                 </a>
                 <a href="http://localhost:8000/homepage/" type="button" class="btn btn-danger btn-lg btn-block">Cancelar

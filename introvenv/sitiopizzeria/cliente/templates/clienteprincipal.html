@@ -21,6 +21,7 @@
     <a href="http://localhost:8000/homepage/" type="button" class="btn btn-danger btn-sm btn-inline">
     Menú Principal
     </a>
+    {{localtime}}
     <br>
     ORDEN ACTUAL
     <br>
@@ -44,7 +45,7 @@
             <div class="col-lg-4 offset-lg-4">
                 <div class="media">
                     <div class="media-body">
-                        <a href="http://localhost:8000/cliente/?precio={{ tamano.precio }}&acum={{ acum }}&agregar={{ tamano.size }}&order={{ order }}&count={{ count }}&inicio=2" type="button" class="btn {{ tamano.color }} btn-lg btn-block">{{ tamano.size }}
+                        <a href="http://localhost:8000/cliente/?precio={{ tamano.precio }}&acum={{ acum }}&acumaux={{ acumaux }}&agregar={{ tamano.size }}&order={{ order }}&count={{ count }}&inicio=2" type="button" class="btn {{ tamano.color }} btn-lg btn-block">{{ tamano.size }}
                             </br>{{ tamano.precio }}
                         </a>
                     </div>
