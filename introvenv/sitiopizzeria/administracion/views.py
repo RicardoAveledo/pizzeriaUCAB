@@ -29,6 +29,9 @@ def index(request):
 	elif (inicio== '7'):
 		ordenes = Orden.objects.filter(orden_detalle__contains='Champiñones').values()
 		return render(request, 'administracion.html', {'ordenes':ordenes})
+	elif (inicio== '8'):
+		ordenes = Orden.objects.filter(orden_detalle__contains='Pimentón').values()
+		return render(request, 'administracion.html', {'ordenes':ordenes})
 	elif (inicio== '13'):
 		ordenes = Orden.objects.order_by('-precio').values()
 		return render(request, 'administracion.html', {'ordenes':ordenes})
