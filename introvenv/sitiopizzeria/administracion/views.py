@@ -38,6 +38,12 @@ def index(request):
 	elif (inicio== '10'):
 		ordenes = Orden.objects.filter(orden_detalle__contains='Aceitunas').values()
 		return render(request, 'administracion.html', {'ordenes':ordenes})
+	elif (inicio== '11'):
+		ordenes = Orden.objects.filter(orden_detalle__contains='Pepperoni').values()
+		return render(request, 'administracion.html', {'ordenes':ordenes})
+	elif (inicio== '12'):
+		ordenes = Orden.objects.filter(orden_detalle__contains='Salchichón').values()
+		return render(request, 'administracion.html', {'ordenes':ordenes})
 	elif (inicio== '13'):
 		ordenes = Orden.objects.order_by('-precio').values()
 		return render(request, 'administracion.html', {'ordenes':ordenes})
