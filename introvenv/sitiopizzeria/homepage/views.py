@@ -3,6 +3,7 @@
 # Django
 from django.shortcuts import render
 from django.http import HttpResponse
+from homepage.models import Orden
 import time;
 
 
@@ -18,4 +19,6 @@ def index(request):
 		ver = 2
 		order = request.GET.get('order','')
 		acum = request.GET.get('acum','0')
+		orden1 = Orden(orden_detalle = order, precio = float(acum), fecha = localtime)
+		orden1.save()
 		return render(request, 'home.html', {'order':order,'acum':acum,'localtime':localtime})
