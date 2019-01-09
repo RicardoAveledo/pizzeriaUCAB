@@ -11,6 +11,7 @@ Se pasa un parámetro en el url, el mismo es obtenido al comienzo de cada index,
 la variable inicio se realizan las operaciones pertinentes."""
 def index(request):
 	inicio = request.GET.get('inicio','1')
+"""Se obtiene la variable inicio de los parámetros pasados al url en la navegación"""
 	localtime = time.asctime( time.localtime(time.time()) )
 	ver = 1
 	if (inicio=='1'):
