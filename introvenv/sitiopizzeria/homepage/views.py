@@ -6,7 +6,9 @@ from django.http import HttpResponse
 from homepage.models import Orden
 import time;
 
-
+"""En esta vista se trabaja el mismo esquema establecido para todas las pantallas de navegación:
+Se pasa un parámetro en el url, el mismo es obtenido al comienzo de cada index, según el valor de
+la variable inicio se realizan las operaciones pertinentes."""
 def index(request):
 	inicio = request.GET.get('inicio','1')
 	localtime = time.asctime( time.localtime(time.time()) )
