@@ -27,3 +27,6 @@ Cliente y Administración. La navegación de estos y de todos los botones está 
 		orden1 = Orden(orden_detalle = order, precio = float(acum), fecha = localtime)
 		orden1.save()
 		return render(request, 'home.html', {'order':order,'acum':acum,'localtime':localtime})
+"""Cuando es 2, significa que la navegación vino a partir de haber creado una pizza o una orden completa, por lo tanto todos 
+los parámetros estarán alojados dentro de los parámetros de navegación URL, por lo tanto, procedemos a guardar la data en la
+base de datos con el modelo Orden definido en Models.py dentro del paquete de homepage"""
