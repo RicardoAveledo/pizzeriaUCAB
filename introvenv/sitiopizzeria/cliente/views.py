@@ -64,13 +64,13 @@ ingredientes = [
     }
 ]
 
-def index(request):
 """En esta primera parte del código, se halan los campos que
 estamos pasando en el url de cada paso en la navegación, de
 esta manera, al agregar un nuevo ingrediente, o una nueva
 pizza, se está pasando como un parámetro dentro del url 
 solicitado, de modo que se pueda continuar la orden con 
 cada cambio de pantalla"""
+def index(request):
 	precio = request.GET.get('precio','0')
 	acum = request.GET.get('acum','0')
 	acum = float(acum) + float(precio)
@@ -82,10 +82,10 @@ cada cambio de pantalla"""
 	count = request.GET.get('count','0')
 	listaorden = []
 	detalle = []
-"""inicio es una variable que utilizamos para emplear la navegación:
-Cuando está en en 1, significa que se está creando una pizza desde 0,
-en 2 significa que se está haciendo una pizza actualmente, y 3 significa
-que se está cambiando de pizza o de orden"""
+	"""inicio es una variable que utilizamos para emplear la navegación:
+	Cuando está en en 1, significa que se está creando una pizza desde 0,
+	en 2 significa que se está haciendo una pizza actualmente, y 3 significa
+	que se está cambiando de pizza o de orden"""
 	if (inicio=='1'):
 		count = float(count) + float('1')
 		mas = str(acumaux) +' Item '
@@ -100,10 +100,10 @@ que se está cambiando de pizza o de orden"""
 	localtime = time.asctime( time.localtime(time.time()) )
 	ordenstr = order
 	listaorden = ordenstr.split(' Item ')
-"""Esta cadena de if hace el paso de los parámetros a las páginas específicas
-para cada flujo. Si se acaba de seleccionar el tamaño de pizza, se procede a la vista de 
-ingredientes, si es la primera vez, se envia a clienteprincipal, donde están todas las opciones
-del menú de tamaños de pizzas, y por último, se envía al proceso del pago"""
+	"""Esta cadena de if hace el paso de los parámetros a las páginas específicas
+	para cada flujo. Si se acaba de seleccionar el tamaño de pizza, se procede a la vista de 
+	ingredientes, si es la primera vez, se envia a clienteprincipal, donde están todas las opciones
+	del menú de tamaños de pizzas, y por último, se envía al proceso del pago"""
 
 	if (inicio=='1'):
 		return render(request, 'clienteprincipal.html', {'localtime':localtime,'listaorden':listaorden,'tamanos': tamanos, 'precio':precio, 'acum':acum, 'acumaux':acumaux, 'agregar':agregar, 'order':order, 'count':count})
