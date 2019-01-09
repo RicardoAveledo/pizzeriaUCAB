@@ -4,6 +4,8 @@ from homepage.models import Orden
 
 # Create your views here.
 
+"""Esta vista consta de una botonería con todas las opciones para las diferentes
+consultas que podemos hacer a la base de datos. """
 def index(request):
 	inicio = request.GET.get('inicio','0')
 	if (inicio== '0'):
