@@ -100,6 +100,10 @@ que se está cambiando de pizza o de orden"""
 	localtime = time.asctime( time.localtime(time.time()) )
 	ordenstr = order
 	listaorden = ordenstr.split(' Item ')
+"""Esta cadena de if hace el paso de los parámetros a las páginas específicas
+para cada flujo. Si se acaba de seleccionar el tamaño de pizza, se procede a la vista de 
+ingredientes, si es la primera vez, se envia a clienteprincipal, donde están todas las opciones
+del menú de tamaños de pizzas, y por último, se envía al proceso del pago"""
 
 	if (inicio=='1'):
 		return render(request, 'clienteprincipal.html', {'localtime':localtime,'listaorden':listaorden,'tamanos': tamanos, 'precio':precio, 'acum':acum, 'acumaux':acumaux, 'agregar':agregar, 'order':order, 'count':count})
