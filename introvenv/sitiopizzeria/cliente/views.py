@@ -2,7 +2,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import time;
 
-
+"""Acá se está estableciendo una lista de diccionarios
+en los que se especifican los tamaños y los precios,
+dentro del diccionario se incorpora el color en el que se
+presentará en la vista, manejada con el css de Bootstrap"""
 tamanos = [
     {
         'size': 'Pizza Grande',
@@ -20,7 +23,9 @@ tamanos = [
         'color':'btn-success',
     }
 ]
-
+"""Se hace lo mismo con los ingredientes, de modo
+que se tiene el nombre, el precio y el color del botón 
+en el que se presentarán"""
 ingredientes = [
     {
         'name': 'Jamón',
