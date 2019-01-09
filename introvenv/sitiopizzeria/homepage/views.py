@@ -14,6 +14,8 @@ def index(request):
 """Se obtiene la variable inicio de los parámetros pasados al url en la navegación"""
 	localtime = time.asctime( time.localtime(time.time()) )
 	ver = 1
+"""Cuando es 1, se procede a la navegación básica de inicio, con los dos botones de navegación
+Cliente y Administración. La navegación de estos y de todos los botones está definido dentro de las vistas"""
 	if (inicio=='1'):
 		return render(request, 'home.html')
 	elif (inicio=='2'):
