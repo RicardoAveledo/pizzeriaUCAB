@@ -65,6 +65,12 @@ ingredientes = [
 ]
 
 def index(request):
+"""En esta primera parte del código, se halan los campos que
+estamos pasando en el url de cada paso en la navegación, de
+esta manera, al agregar un nuevo ingrediente, o una nueva
+pizza, se está pasando como un parámetro dentro del url 
+solicitado, de modo que se pueda continuar la orden con 
+cada cambio de pantalla"""
 	precio = request.GET.get('precio','0')
 	acum = request.GET.get('acum','0')
 	acum = float(acum) + float(precio)
@@ -76,6 +82,10 @@ def index(request):
 	count = request.GET.get('count','0')
 	listaorden = []
 	detalle = []
+"""inicio es una variable que utilizamos para emplear la navegación:
+Cuando está en en 1, significa que se está creando una pizza desde 0,
+en 2 significa que se está haciendo una pizza actualmente, y 3 significa
+que se está cambiando de pizza o de orden"""
 	if (inicio=='1'):
 		count = float(count) + float('1')
 		mas = str(acumaux) +' Item '
